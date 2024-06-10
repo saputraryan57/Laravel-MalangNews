@@ -6,6 +6,7 @@ Penulis | Malang News
 
 @section('content')
 <h3>Data Penulis</h3>
+<button onclick="window.location.href='/penulis/cetak'">Cetak Data</button>
 <table class="data-table">
   <thead>
     <tr>

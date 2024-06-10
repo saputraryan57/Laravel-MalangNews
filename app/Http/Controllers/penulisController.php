@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\penulis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class penulisController extends Controller
 {
@@ -100,4 +101,12 @@ class penulisController extends Controller
         $penulis->delete();
         return redirect("/penulis")->with("success","Data Berhasil di Hapus");
     }
+
+    public function cetak()
+    {
+        $penulis = penulis::all();
+        $pdf = Pdf::loadview("penulis.penulis-cetak", compact("penulis"));
+        return $pdf->download('laporan-data-penulis.pdf');
+    }
+
 }

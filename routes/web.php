@@ -14,3 +14,4 @@ Route::get('/penulis/edit/{id}', [penulisController::class, 'edit']);
 Route::put('/penulis/update/{id}', [penulisController::class, 'update']);
 Route::get('/penulis/hapus/{id}', [penulisController::class, 'hapus']);
 Route::get('/penulis/destroy/{id}', [penulisController::class, 'destroy']);
+Route::get('/penulis/cetak', [penulisController::class, 'cetak']);
